@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TIMB — The Income Mastery Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Barlow:wght@400;
+500;600;700&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+    background: #0a0a0a; 
+}
+
+body {
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+  font-family: 'Barlow', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.divider { 
+    width:100%; 
+    height:1px; 
+    background:linear-gradient(90deg,transparent,#D4AF37 50%,transparent); 
+    opacity:0.3; 
+}
+
+.section-label {
+  font-size:11px; 
+  letter-spacing:4px; 
+  text-transform:uppercase;
+  color:#D4AF37; 
+  text-align:center; 
+  margin-bottom:20px; 
+  font-weight:600;
+}
+
+.gold 
+{ color:#D4AF37; 
+}
+
+.hl   
+{ color:#ffffff; 
+  font-weight:700; 
+}
+
+/* ── BUTTON ── */
+.btn {
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  gap:10px;
+  background:#E8C030; 
+  color:#1a0800;
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:17px; 
+  font-weight:900; 
+  letter-spacing:2px; 
+  text-transform:uppercase;
+  padding:20px 36px; 
+  border-radius:6px; 
+  border:none; 
+  cursor:pointer;
+  text-decoration:none; 
+  width:100%;
+  transition:filter .2s, transform .15s;
+}
+
+.btn:hover { 
+    filter:brightness(1.12); 
+    transform:translateY(-2px); 
+}
+
+/* ── BADGE ── */
+.badge {
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px;
+  border:1.5px solid #D4AF37; 
+  border-radius:50px;
+  padding:6px 18px; 
+  font-size:11px; 
+  letter-spacing:2px;
+  color:#D4AF37; 
+  font-weight:600; 
+  text-transform:uppercase; 
+  margin-bottom:24px;
+}
+
+/* ── HERO ── */
+section.hero {
+  background:#0a0a0a;
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+  min-height:100vh; 
+  padding:60px 20px 80px;
+  position:relative; 
+  text-align:center;
+}
+
+.hero-shield {
+  background:#4B0082;
+  border-radius:50% 50% 48% 48% / 0% 0% 55% 55%;
+  max-width:560px; 
+  width:100%; 
+  padding:60px 40px 80px;
+}
+
+.hero-logo {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:88px; 
+  font-weight:900; 
+  color:#D4AF37;
+  letter-spacing:6px; 
+  line-height:1; 
+  margin-bottom:6px;
+  text-shadow:3px 5px 14px rgba(0,0,0,.6);
+}
+
+.hero-sub { 
+    font-size:12px; 
+    letter-spacing:4.5px; 
+    color:#fff; 
+    text-transform:uppercase; 
+    margin-bottom:32px; 
+}
+
+.hero-headline {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(20px,4vw,26px); 
+  font-weight:900;
+  line-height:1.3; 
+  margin-bottom:16px;
+}
+
+.hero-body { 
+    font-size:15px; 
+    color:#cccccc; 
+    line-height:1.75; 
+    margin-bottom:36px; 
+    max-width:400px; 
+    margin-left:auto; 
+    margin-right:auto; 
+}
+
+.hero-meta { 
+    font-size:13px; 
+    color:#aaaaaa; 
+    margin-top:12px; 
+}
+
+.scroll-hint {
+  position:absolute; 
+  bottom:24px; 
+  left:50%; 
+  transform:translateX(-50%);
+  font-size:11px; 
+  letter-spacing:3px; 
+  color:#888;
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  gap:4px;
+  animation:bob 2s ease-in-out infinite;
+}
+
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 
+50%{transform:translateX(-50%) translateY(7px)} }
+
+/* ── PAIN ── */
+section.pain { 
+    background:#111111; 
+    padding:80px 20px; 
+    text-align:center; 
+}
+
+section.pain h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(30px,6vw,50px); 
+  font-weight:900; 
+  line-height:1.1; 
+  margin-bottom:44px;
+}
+
+.grid2 { 
+    display:grid; 
+    grid-template-columns:repeat(2,1fr); 
+    gap:20px; 
+    max-width:720px; 
+    margin:0 auto; 
+}
+
+.card { 
+    background:#1e0833; 
+    border:1px solid rgba(120,0,200,.45); 
+    border-radius:12px; 
+    padding:28px 22px; 
+    text-align:left; 
+}
+
+.card .icon { 
+    font-size:32px; 
+    display:block; 
+    margin-bottom:14px; 
+}
+
+.card h3 { 
+    font-size:16px; 
+    font-weight:700; 
+    margin-bottom:10px; 
+    color:#fff; 
+}
+
+.card p  { 
+    font-size:14px; 
+    color:#aaaaaa; 
+    line-height:1.65; 
+}
+
+/* ── STORY ── */
+section.story { 
+    background:#0a0a0a; 
+    padding:80px 20px; 
+    max-width:700px; 
+    margin:0 auto; 
+    text-align:center; 
+}
+
+.story-quote {
+  font-family:'Playfair Display',Georgia,serif; 
+  font-style:italic;
+  font-size:clamp(17px,2.8vw,22px); 
+  color:#fff; 
+  line-height:1.7;
+  margin-bottom:36px; 
+  padding:0 10px;
+}
+
+.story-body { 
+    font-size:15px; 
+    color:#aaaaaa; 
+    line-height:1.85; 
+    margin-bottom:18px; 
+    text-align:left; }
+
+/* ── MODULES ── */
+section.modules { 
+    background:#111111; 
+    padding:80px 20px; 
+    text-align:center; 
+}
+
+section.modules h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(26px,5vw,44px); 
+  font-weight:900; 
+  line-height:1.15; 
+  margin-bottom:48px;
+}
+
+.modcard { 
+    background:#2a0d42; 
+    border:1px solid rgba(120,0,200,.4); 
+    border-radius:12px; 
+    padding:34px 22px 28px; 
+    text-align:center; 
+}
+
+.modnum {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:60px; 
+  font-weight:900; 
+  color:#D4AF37; 
+  line-height:1; 
+  margin-bottom:10px;
+}
+
+.modcard h3 { 
+    font-size:16px; 
+    font-weight:700; 
+    margin-bottom:10px; 
+    color:#fff; 
+}
+
+.modcard p  { 
+    font-size:13px; 
+    color:#aaaaaa; 
+    line-height:1.65; 
+}
+
+/* ── RESULTS ── */
+section.results { 
+    background:#0a0a0a; 
+    padding:80px 20px; 
+    text-align:center; 
+}
+
+section.results h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(26px,5vw,40px); 
+  font-weight:900; 
+  margin-bottom:40px;
+}
+
+.rescard { 
+    background:#1e0833; 
+    border:1px solid rgba(120,0,200,.4); 
+    border-radius:12px; 
+    padding:28px 20px; 
+    text-align:center; 
+}
+
+.stars  { 
+    color:#D4AF37; 
+    font-size:14px; 
+    margin-bottom:8px; 
+}
+
+.amount {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:30px; 
+  font-weight:900; 
+  color:#D4AF37; 
+  margin-bottom:6px;
+}
+
+.rescard strong { 
+    display:block; 
+    font-size:14px; 
+    font-weight:700; 
+    margin-bottom:8px; 
+    color:#fff; 
+}
+
+.rescard p { 
+    font-size:12px; 
+    color:#aaaaaa; 
+    line-height:1.55; 
+    margin-bottom:14px; 
+}
+
+.tag { 
+    display:inline-block; 
+    border:1px solid #5c0d99; 
+    border-radius:50px; 
+    padding:4px 14px; 
+    font-size:10px; 
+    letter-spacing:2px; 
+    text-transform:uppercase; 
+    color:#aaaaaa; 
+    font-weight:600; 
+}
+
+.warning { 
+    background:#4B0082; 
+    padding:26px 24px; 
+    text-align:center; 
+    max-width:720px; 
+    margin:0 auto 60px; 
+    border-radius:4px; 
+}
+
+.warning p { 
+    font-size:15px; 
+    line-height:1.6; 
+    color:#fff; 
+}
+
+/* ── FOR YOU ── */
+section.foryou { 
+    background:#0a0a0a; 
+    padding:80px 20px; 
+    text-align:center; 
+}
+
+section.foryou h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(26px,5vw,44px); 
+  font-weight:900; 
+  margin-bottom:36px;
+}
+
+.fylist { 
+    list-style:none; 
+    max-width:600px; 
+    margin:0 auto; 
+    display:flex; 
+    flex-direction:column; 
+    gap:12px; 
+}
+
+.fylist li {
+  background:#1e0833; 
+  border:1px solid rgba(120,0,200,.3); 
+  border-radius:10px;
+  padding:18px 24px; 
+  display:flex; 
+  align-items:center; 
+  gap:14px;
+  font-size:15px; 
+  font-weight:500; 
+  text-align:left; 
+  color:#fff;
+}
+
+.fylist li::before { 
+    content:"✦"; 
+    color:#D4AF37; 
+    font-size:14px; 
+    flex-shrink:0; 
+}
+
+/* ── PRICING ── */
+section.pricing { 
+    background:#4B0082; 
+    border-radius:50% 50% 0 0/8% 8% 0 0; 
+    padding:80px 20px 100px; 
+    text-align:center; 
+}
+
+section.pricing h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(28px,5vw,44px); 
+  font-weight:900; 
+  margin-bottom:40px; 
+  line-height:1.1;
+}
+
+.pcard { 
+    background:#1e0833; 
+    border:2px solid #D4AF37; 
+    border-radius:16px; 
+    padding:40px 32px; max-width:480px; 
+    margin:0 auto; 
+    text-align:center; 
+}
+
+.mospop {
+  display:inline-flex; 
+  align-items:center; 
+  gap:6px;
+  background:#E8C030; 
+  color:#1a0800;
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:11px; 
+  font-weight:900; 
+  letter-spacing:2px; 
+  text-transform:uppercase;
+  padding:6px 20px; 
+  border-radius:50px; 
+  margin-bottom:16px;
+}
+
+.timbname {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:38px; 
+  font-weight:900; 
+  color:#D4AF37; 
+  letter-spacing:5px; 
+  margin-bottom:6px;
+}
+
+.pdesc { 
+    font-size:13px; 
+    color:#aaaaaa; 
+    margin-bottom:22px; 
+}
+
+.pbig {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:76px; 
+  font-weight:900; 
+  color:#FFD700; 
+  line-height:1; 
+  margin-bottom:6px;
+}
+
+.p
+note { 
+    font-size:13px; 
+    color:#aaaaaa; 
+    margin-bottom:28px; 
+}
+
+.flist { 
+    list-style:none; 
+    text-align:left; 
+    margin-bottom:32px; 
+}
+
+.flist li {
+  display:flex; 
+  align-items:center; 
+  gap:12px;
+  padding:13px 0; 
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:14px; 
+  color:#fff;
+}
+
+.flist li::before { 
+    content:"✦"; 
+    color:#D4AF37; 
+    font-size:12px; 
+    flex-shrink:0; 
+}
+
+.secnote { 
+    font-size:12px; 
+    color:#888; 
+    margin-top:12px; 
+}
+
+/* ── FAQ ── */
+section.faq { 
+    background:#0a0a0a; 
+    padding:80px 20px; 
+    max-width:640px; 
+    margin:0 auto; 
+}
+
+section.faq h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(24px,4vw,36px); 
+  font-weight:900; 
+  text-align:center; 
+  margin-bottom:36px;
+}
+
+.faqitem { 
+    border-bottom:1px solid rgba(255,255,255,.1); 
+}
+
+.faqq {
+  width:100%; 
+  background:none; 
+  border:none; 
+  color:#fff;
+  font-family:'Barlow','Segoe UI',Arial,sans-serif;
+  font-size:15px; 
+  font-weight:600; 
+  text-align:left;
+  padding:20px 4px; 
+  cursor:pointer;
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  gap:12px;
+  transition:color .2s;
+}
+
+.faqq:hover { 
+    color:#D4AF37; 
+}
+
+.faqplus { 
+    color:#D4AF37; 
+    font-size:24px; 
+    flex-shrink:0; 
+    transition:transform .3s; 
+    font-weight:300; 
+}
+
+.faqa {
+     max-height:0; 
+     overflow:hidden; 
+     transition:max-height .35s ease,padding .25s; 
+     font-size:14px; 
+     color:#aaaaaa; 
+     line-height:1.75; 
+     padding:0 4px; 
+    }
+
+.faqitem.open .faqa { 
+    max-height:300px; 
+    padding-bottom:18px; 
+}
+
+.faqitem.open .faqplus { 
+    transform:rotate(45deg); 
+}
+
+/* ── LAST CHANCE ── */
+section.last { 
+    background:#4B0082; 
+    border-radius:50% 50% 0 0/8% 8% 0 0; 
+    padding:80px 20px 100px; 
+    text-align:center; 
+}
+
+section.last h2 {
+  font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+  font-size:clamp(28px,5vw,44px); 
+  font-weight:900; 
+  margin-bottom:20px; 
+  line-height:1.1;
+}
+
+section.last > p { 
+    font-size:15px; 
+    color:rgba(255,255,255,.85); 
+    max-width:460px; 
+    margin:0 auto 36px; 
+    line-height:1.75; 
+}
+
+section.last > p strong { 
+    color:#fff; 
+}
+
+.lcmeta { 
+    font-size:13px; 
+    color:rgba(255,255,255,.45); 
+    margin-top:14px; }
+
+/* ── FOOTER ── */
+footer { 
+    background:#0a0a0a; 
+    padding:36px 20px; 
+    text-align:center; 
+}
+
+.fbrand { 
+    font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif; 
+    color:#D4AF37; 
+    font-size:18px; 
+    font-weight:700; 
+    letter-spacing:2px; 
+    margin-bottom:8px; 
+}
+
+footer p { 
+    font-size:13px; 
+    color:rgba(255,255,255,.3); 
+}
+
+/* ── FADE IN ── */
+.fade { 
+    opacity:0; 
+    transform:translateY(28px); 
+    transition:opacity .6s ease,transform .6s ease; 
+}
+
+.fade.in { 
+    opacity:1; 
+    transform:translateY(0); 
+}
+
+@media(max-width:540px){
+  .grid2 { grid-template-columns:1fr; }
+  .hero-logo { font-size:68px; }
+  .hero-shield { padding:50px 24px 70px; }
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-shield fade in">
+    <div class="badge">★ &nbsp;Nigeria's #1 Digital Income System</div>
+    <div class="hero-logo">TIMB</div>
+    <p class="hero-sub">The Income Mastery Blueprint</p>
+    <h1 class="hero-headline">Tired of Working Hard &amp; Still <span class="gold">Broke at Month End?</span><br>What If One Blueprint Changed Everything?</h1>
+    <p class="hero-body">Discover the exact system students, stay-at-home moms &amp; corps members are using to earn real income online — without a 9–5, without a boss, and without wasting years figuring it out alone.</p>
+    <a href="https://selar.com/o8d2f7f3be" class="btn">🔥 GET INSTANT ACCESS — ₦10,000</a>
+    <p class="hero-meta" style="margin-top:14px;">One-time payment · Instant delivery · <span class="gold">No hidden fees</span></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PAIN -->
+<section class="pain">
+  <p class="section-label">Sound Familiar?</p>
+  <h2 class="fade">You're Not Lazy.<br>You Just Haven't Found <span class="gold">The Right <br> System</span> — Until Now.</h2>
+  <div class="grid2">
+    <div class="card fade"><span class="icon">😩</span><h3>Living Paycheck to Paycheck</h3><p>Working long hours but barely covering bills. Your income doesn't match your effort — and you're exhausted.</p></div>
+    <div class="card fade"><span class="icon">📱</span><h3>Scrolling Past Success Stories</h3><p>You see people your age making money online and wonder "how?" — but nobody shows you the real system.</p></div>
+    <div class="card fade"><span class="icon">⏳</span><h3>No Time, No Capital</h3><p>You're a student, a mom, doing NYSC — you can't quit everything to start a business. You need something that fits your life.</p></div>
+    <div class="card fade"><span class="icon">🤯</span><h3>Confused by Information Overload</h3><p>YouTube. Courses. Free PDFs. Too much noise, zero clarity. You've tried things and gotten nowhere.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="story">
+  <p class="section-label">My Story</p>
+  <p class="story-quote fade">"I was a waiter in a restaurant — on my feet all day, serving others, going home with barely enough. I knew there had to be a better way."</p>
+  <p class="story-body fade">My name doesn't matter as much as this truth: I know exactly what it feels like to have potential, ambition, and zero money to show for it.</p>
+  <p class="story-body fade">Every day I carried plates and smiled at customers, I was dying inside. I had dreams bigger than that restaurant, but no roadmap to reach them.</p>
+  <p class="story-body fade">Then I discovered digital products and affiliate marketing. Not the overnight-riches nonsense — the real, systematic way to build income by promoting valuable products online.</p>
+  <p class="story-body fade">I went from waiter to earning <span class="hl">₦580,000+ on Selar</span>, certified as a <span class="hl">Top Affiliate on EarnersPay</span> with over <span class="hl">$762 in verified earnings</span> — and I've never looked back.</p>
+  <p class="story-body fade">Now I've packaged everything I know into one blueprint — so you don't waste the years I almost did.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODULES -->
+<section class="modules">
+  <p class="section-label">What's Inside TIMB</p>
+  <h2 class="fade">Everything You Need to <span class="gold">Start Earning</span> <br> — Nothing You Don't</h2>
+  <div class="grid2">
+    <div class="modcard fade"><div class="modnum">01</div><h3>The Income Foundation</h3><p>Understand exactly how digital product marketing works and why it's the fastest path to income online in Nigeria today.</p></div>
+    <div class="modcard fade"><div class="modnum">02</div><h3>Product Selection Mastery</h3><p>Learn how to identify high-converting digital products to promote — and never waste time on low-paying offers again.</p></div>
+    <div class="modcard fade"><div class="modnum">03</div><h3>Traffic &amp; Audience Building</h3><p>Discover how to attract buyers even if you have zero followers — using simple free and paid strategies that work.</p></div>
+    <div class="modcard fade"><div class="modnum">04</div><h3>Sales &amp; Conversion Secrets</h3><p>The exact messaging, content, and techniques that turn cold strangers into paying customers — even on WhatsApp.</p></div>
+    <div class="modcard fade"><div class="modnum">05</div><h3>Income Scaling System</h3><p>Once you're making your first sales, here's how to multiply it — so your income grows even while you sleep.</p></div>
+    <div class="modcard fade"><div class="modnum">06</div><h3>Mindset &amp; Consistency Blueprint</h3><p>The inner game of wealth. Why most people quit before the breakthrough — and how you'll be different.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESULTS -->
+<section class="results">
+  <p class="section-label">Real Results. Real People.</p>
+  <h2 class="fade">Students &amp; Moms Are Already <span class="gold"> <br> Cashing Out</span> </h2>
+  <div class="grid2" style="max-width:720px;margin:0 auto 32px;">
+    <div class="rescard fade"><div class="stars">★★★★★</div><div class="amount">₦762,940</div><strong>Ugwuanyi Pascaline Mesoma</strong><p>Certified Top Affiliate on EarnersPay — $762.94 in verified earnings</p><span class="tag">Verified Certificate</span></div>
+    <div class="rescard fade"><div class="stars">★★★★★</div><div class="amount">$727.66</div><strong>EarnersPay Dashboard</strong><p>Total affiliate earnings showing consistent daily sales — making money every single day</p><span class="tag">Live Dashboard</span></div>
+    <div class="rescard fade"><div class="stars">★★★★★</div><div class="amount">₦580,218</div><strong>Selar Wallet</strong><p>Available to withdraw — earned entirely through digital product promotion using this blueprint</p><span class="tag">Selar Verified</span></div>
+    <div class="rescard fade"><div class="stars">★★★★★</div><div class="amount">📱 iPhone 11 Pro</div><strong>Coach Fish</strong><p>"Yesterday I had an itch and I scratched out an iPhone 11 Pro" — bought straight from affiliate earnings</p><span class="tag">Community Win</span></div>
+  </div>
+  <div class="warning fade">
+    <p>⚡ <strong>WARNING:</strong> This blueprint is priced at <span class="gold">₦10,000 for a limited time only.</span> Price increases soon.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOR YOU -->
+<section class="foryou">
+  <p class="section-label">Is This For You?</p>
+  <h2 class="fade">TIMB Is <span class="gold">Built For</span> You If…</h2>
+  <ul class="fylist">
+    <li class="fade">You're a student who wants to earn while studying</li>
+    <li class="fade">You're a stay-at-home mom needing flexible income</li>
+    <li class="fade">You're serving NYSC and want to build something real</li>
+    <li class="fade">You're tired of low-paying jobs and want freedom</li>
+    <li class="fade">You want to earn online but have no idea where to start</li>
+    <li class="fade">You're ready to follow a proven system — not guess</li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <p class="section-label fade">Get Access Today</p>
+  <h2 class="fade">One Investment.<br><span class="gold">Lifetime of Results.</span></h2>
+  <div class="pcard fade">
+    <div class="mospop">★ &nbsp;Most Popular</div>
+    <div class="timbname">TIMB</div>
+    <p class="pdesc">The Income Mastery Blueprint — Full Access</p>
+    <div class="pbig">₦10,000</div>
+    <p class="pnote">One-time payment · Instant access</p>
+    <ul class="flist">
+      <li>Complete Income Mastery Blueprint (PDF)</li>
+      <li>Step-by-step digital product promotion system</li>
+      <li>Traffic &amp; audience building strategies</li>
+      <li>Sales scripts &amp; conversion techniques</li>
+      <li>Income scaling roadmap</li>
+      <li>Lifetime access — no subscription</li>
+    </ul>
+    <a href="https://selar.com/o8d2f7f3be" class="btn">🔥 GET INSTANT ACCESS NOW</a>
+    <p class="secnote">Secure payment · Instant delivery to your email</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">Questions?</p>
+  <h2 class="fade">Frequently Asked Questions</h2>
+  <div class="faqitem fade">
+    <button class="faqq">Do I need experience to start? <span class="faqplus">+</span></button>
+    <div class="faqa">Not at all. TIMB was designed from the ground up for complete beginners. If you can follow simple step-by-step instructions, you have everything you need to get started.</div>
+  </div>
+  <div class="faqitem fade">
+    <button class="faqq">How fast will I start earning? <span class="faqplus">+</span></button>
+    <div class="faqa">Results vary based on effort and consistency. Some students see their first sales within days of applying the system. The blueprint gives you a clear roadmap to follow from day one.</div>
+  </div>
+  <div class="faqitem fade">
+    <button class="faqq">I'm a student / corps member. Can I really do this? <span class="faqplus">+</span></button>
+    <div class="faqa">Absolutely. TIMB was built specifically with students and corps members in mind. The strategies work around your schedule and require no large upfront capital.</div>
+  </div>
+  <div class="faqitem fade">
+    <button class="faqq">What if I don't have much capital? <span class="faqplus">+</span></button>
+    <div class="faqa">The blueprint includes both free and low-cost traffic strategies. You don't need a big budget to get started — just your phone and the willingness to follow the system.</div>
+  </div>
+  <div class="faqitem fade">
+    <button class="faqq">How do I receive the blueprint after payment? <span class="faqplus">+</span></button>
+    <div class="faqa">Instantly. As soon as your payment is confirmed, the blueprint is delivered directly to your email. No waiting, no delays.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LAST CHANCE -->
+<section class="last">
+  <p class="section-label fade">Last Chance</p>
+  <h2 class="fade">Your Income Breakthrough<br>Starts Right Now</h2>
+  <p class="fade">Stop watching others win. Stop waiting for the "right time." The system is here. The results are proven. The only thing missing is <strong>you</strong>.</p>
+  <a href="https://selar.com/o8d2f7f3be" class="btn fade" style="max-width:480px;margin:0 auto;">🔥 YES — I WANT THE BLUEPRINT FOR ₦10,000</a>
+  <p class="lcmeta fade">Instant Access · One-Time Payment · No Recurring Fees</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">TIMB — The Income Mastery Blueprint</div>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade:not(.in)').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.faqq').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faqitem');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faqitem.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
