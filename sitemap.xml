@@ -8,13 +8,3 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Section anchors -->
-  <url>
-    <loc>https://digitalmeso.github.io/timb#pricing</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-</urlset>
